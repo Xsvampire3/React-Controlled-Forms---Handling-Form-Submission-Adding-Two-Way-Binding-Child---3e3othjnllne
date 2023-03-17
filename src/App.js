@@ -1,4 +1,3 @@
-import './styles/App.css';
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,6 +20,7 @@ function App() {
     newCheckbox[index] = event.target.checked;
     setCheckbox(newCheckbox);
   };
+  
 
   return (
     <div className="container">
@@ -117,7 +117,7 @@ function App() {
               </label>
             </div>
             <div className="form-check">
-          <input className="form-check-input" type="checkbox" value="3" id="checkbox3" name="checkbox" checked={checkbox[2]} onChange={() => handleCheckboxChange(2)} />
+            <input className="form-check-input" type="checkbox" value="3" id="checkbox3" name="checkbox" checked={checkbox[2]} onChange={handleCheckboxChange} />
           <label className="form-check-label" htmlFor="checkbox3">
             Checkbox 3
           </label>
@@ -133,10 +133,19 @@ function App() {
         <span className="title">Radio : </span>{radio}
       </p>
       <p className="checkbox">
-        <span className="title">Checkbox : </span> {[...checkbox].map((value, index) => (
-          <span key={index}>[{value ? "X" : " "}]</span>
-        ))}
-      </p>
+  <span className="title">Checkbox : </span>
+  [
+  {checkbox.map((value, index) => {
+    if (value) {
+      return <span key={index}>{index + 1}, </span>
+    } else {
+      return null;
+    }
+  })}
+  ]
+</p>
+
+
     </div>
   </div>
 </div>

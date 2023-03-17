@@ -137,9 +137,9 @@ function App() {
   [
   {checkbox.map((value, index) => {
     if (value) {
-      return <span key={index}>{index + 1}, </span>
+      return <span key={index}> {index + 1}, </span>
     } else {
-      return null;
+      return " ";
     }
   })}
   ]

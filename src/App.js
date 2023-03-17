@@ -1,4 +1,4 @@
-import './styles/App.css';
+import './styles.css';
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,13 +16,14 @@ function App() {
   };
 
   const handleCheckboxChange = (event) => {
-  const index = event.target ? event.target.value - 1 : -1;
-  if (index >= 0 && index < checkbox.length) {
-    const newCheckbox = [...checkbox];
-    newCheckbox[index] = event.target.checked;
-    setCheckbox(newCheckbox);
-  }
-};
+    const index = event.target ? event.target.value - 1 : -1;
+    if (index >= 0 && index < checkbox.length) {
+      const newCheckbox = [...checkbox];
+      newCheckbox[index] = event.target.checked;
+      setCheckbox(newCheckbox);
+    }
+  };
+
   return (
     <div className="container">
       <h1>React Controlled Forms</h1>
@@ -87,42 +88,51 @@ function App() {
               </label>
             </div>
             <label className="form-check-label" htmlFor="checkbox">
-              Default checkbox
-            </label>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="1"
-                id="checkbox1"
-                name="checkbox"
-                checked={checkbox[0]}
-                onChange={handleCheckboxChange}
-              />
-              <label className="form-check-label" htmlFor="checkbox1">
-                Checkbox 1
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="2"
-                id="checkbox2"
-                name="checkbox"
-                checked={checkbox[1]}
-                onChange={handleCheckboxChange}
-              />
-              <label className="form-check-label" htmlFor="checkbox2">
-                Checkbox 2
-              </label>
-            </div>
-            <div className="form-check">
-          <input className="form-check-input" type="checkbox" value="3" id="checkbox3" name="checkbox" checked={checkbox[2]} onChange={() => handleCheckboxChange(2)} />
-          <label className="form-check-label" htmlFor="checkbox3">
-            Checkbox 3
-          </label>
-        </div>
+  Default checkbox
+</label>
+<div className="form-check">
+  <input
+    className="form-check-input"
+    type="checkbox"
+    value="1"
+    id="checkbox1"
+    name="checkbox"
+    checked={checkbox[0]}
+    onChange={handleCheckboxChange}
+  />
+  <label className="form-check-label" htmlFor="checkbox1">
+    Checkbox 1
+  </label>
+</div>
+<div className="form-check">
+  <input
+    className="form-check-input"
+    type="checkbox"
+    value="2"
+    id="checkbox2"
+    name="checkbox"
+    checked={checkbox[1]}
+    onChange={handleCheckboxChange}
+  />
+  <label className="form-check-label" htmlFor="checkbox2">
+    Checkbox 2
+  </label>
+</div>
+<div className="form-check">
+  <input
+    className="form-check-input"
+    type="checkbox"
+    value="3"
+    id="checkbox3"
+    name="checkbox"
+    checked={checkbox[2]}
+    onChange={handleCheckboxChange}
+  />
+  <label className="form-check-label" htmlFor="checkbox3">
+    Checkbox 3
+  </label>
+</div>
+
       </form>
     </div>
     <div className="col md-6">

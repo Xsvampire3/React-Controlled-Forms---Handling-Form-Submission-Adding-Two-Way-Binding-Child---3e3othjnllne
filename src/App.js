@@ -86,51 +86,42 @@ function App() {
               </label>
             </div>
             <label className="form-check-label" htmlFor="checkbox">
-  Default checkbox
-</label>
-<div className="form-check">
-  <input
-    className="form-check-input"
-    type="checkbox"
-    value="1"
-    id="checkbox1"
-    name="checkbox"
-    checked={checkbox[0]}
-    onChange={handleCheckboxChange}
-  />
-  <label className="form-check-label" htmlFor="checkbox1">
-    Checkbox 1
-  </label>
-</div>
-<div className="form-check">
-  <input
-    className="form-check-input"
-    type="checkbox"
-    value="2"
-    id="checkbox2"
-    name="checkbox"
-    checked={checkbox[1]}
-    onChange={handleCheckboxChange}
-  />
-  <label className="form-check-label" htmlFor="checkbox2">
-    Checkbox 2
-  </label>
-</div>
-<div className="form-check">
-  <input
-    className="form-check-input"
-    type="checkbox"
-    value="3"
-    id="checkbox3"
-    name="checkbox"
-    checked={checkbox[2]}
-    onChange={handleCheckboxChange}
-  />
-  <label className="form-check-label" htmlFor="checkbox3">
-    Checkbox 3
-  </label>
-</div>
-
+              Default checkbox
+            </label>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="1"
+                id="checkbox1"
+                name="checkbox"
+                checked={checkbox[0]}
+                onChange={handleCheckboxChange}
+              />
+              <label className="form-check-label" htmlFor="checkbox1">
+                Checkbox 1
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="2"
+                id="checkbox2"
+                name="checkbox"
+                checked={checkbox[1]}
+                onChange={handleCheckboxChange}
+              />
+              <label className="form-check-label" htmlFor="checkbox2">
+                Checkbox 2
+              </label>
+            </div>
+            <div className="form-check">
+          <input className="form-check-input" type="checkbox" value="3" id="checkbox3" name="checkbox" checked={checkbox[2]} onChange={() => handleCheckboxChange(2)} />
+          <label className="form-check-label" htmlFor="checkbox3">
+            Checkbox 3
+          </label>
+        </div>
       </form>
     </div>
     <div className="col md-6">
@@ -141,17 +132,12 @@ function App() {
       <p className="radio">
         <span className="title">Radio : </span>{radio}
       </p>
-        <p className="checkbox">
-        <span className="title">Checkbox : </span>
-
-        {checkbox.filter(Boolean).length > 0 && (
-    <>
-       [ {checkbox.map((isChecked, index) => isChecked && `${index + 1}`).filter(Boolean).join(", ")} ]
-    </>
-  )}
-
+      <p className="checkbox">
+        <span className="title">Checkbox : </span> {[...checkbox].map((value, index) => (
+          <span key={index}>[{value ? "X" : " "}]</span>
+        ))}
       </p>
-      </div>
+    </div>
   </div>
 </div>
 );

@@ -143,11 +143,11 @@ function App() {
       <p className="radio">
         <span className="title">Radio : </span>{radio}
       </p>
-      <p className="checkbox">
-        <span className="title">Checkbox : </span> {[...checkbox].map((value, index) => (
-          <span key={index}>[{value ? "X" : " "}]</span>
-        ))}
-      </p>
+      {checkbox.filter(Boolean).length > 0 && (
+  <p className="checkbox">
+    Checkbox : [ {checkbox.map((isChecked, index) => isChecked && index + 1).filter(Boolean).join(", ")} ]
+  </p>
+)}
     </div>
   </div>
 </div>

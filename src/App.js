@@ -145,7 +145,7 @@ function App() {
       </p>
       {checkbox.filter(Boolean).length > 0 && (
   <p className="checkbox">
-    Checkbox : [ {checkbox.map((isChecked, index) => isChecked && index + 1).filter(Boolean).join(", ")} ]
+    <span className="title">Checkbox : </span> [ {checkbox.map((isChecked, index) => isChecked && index + 1).filter(Boolean).join(", ")} ]
   </p>
 )}
     </div>

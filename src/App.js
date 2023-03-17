@@ -16,12 +16,10 @@ function App() {
   };
 
   const handleCheckboxChange = (event) => {
-    const index = event.target ? event.target.value - 1 : -1;
-    if (index >= 0 && index < checkbox.length) {
-      const newCheckbox = [...checkbox];
-      newCheckbox[index] = event.target.checked;
-      setCheckbox(newCheckbox);
-    }
+    const index = event.target.value - 1;
+    const newCheckbox = [...checkbox];
+    newCheckbox[index] = event.target.checked;
+    setCheckbox(newCheckbox);
   };
 
   return (
